@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$errorMessage = isset($_SESSION['error_register']) ? $_SESSION['error_register'] : null;
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

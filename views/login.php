@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$errorMessage = isset($_SESSION['error_login']) ? $_SESSION['error_login'] : null;
+
+?>
 <!DOCTYPE html>
 <html>
 

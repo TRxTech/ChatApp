@@ -5,7 +5,9 @@ if (!isset($_COOKIE['username']) || $_COOKIE['role'] != 'admin' ) {
 	exit();
 }
 
-$userinfo = $_SESSION['userinfo'];
+$users = [];
+
+$users = $_SESSION['users'];
 
 ?>
 
@@ -15,9 +17,11 @@ $userinfo = $_SESSION['userinfo'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../styles/admin_utilites.css">
+	<link rel="stylesheet" href="../styles/delete_user.css">
     <title>Admin Dashboard</title>
 </head>
 <body>
+
     <div class="sidebar">
 
         <a href="../controllers/admin_dashboard_controller.php"><h1>Admin Dashboard</h1><a/>
@@ -45,41 +49,38 @@ $userinfo = $_SESSION['userinfo'];
 		<a href="../controllers/view_orders_controller.php"><h2>Orders</h2></a>
 		<a href="../controllers/review_admin_controller.php"><h2>Reviews</h2></a>
 		<a href="../controllers/logout.php"><h2>Logout</h2></a>
-<<<<<<< HEAD
-    </div> 
-          
-=======
     </div>
->>>>>>> rakib
     <div class="container">
-    <h1 id="profile">User Profile</h1>
-    <table>
-        <tr>
-            <th>User ID</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Role</th>
-            <th>Email</th>
-            <th>Name</th>
-            <th>Phone Number</th>
-            <th>Address</th>
-        </tr>
-        <tr>
-			<td><?= $userinfo['user_id'] ?></td>
-            <td><?= $userinfo['username'] ?></td>
-            <td><?= $userinfo['password'] ?></td>
-            <td><?= $userinfo['role'] ?></td>
-            <td><?= $userinfo['email'] ?></td>
-            <td><?= $userinfo['name'] ?></td>
-            <td><?= $userinfo['phone_number'] ?></td>
-            <td><?= $userinfo['address'] ?></td>
-        </tr>
-    </table>
+		<h1 id="heading">Users</h1>
+		<table>
+			<tr>
+				<th>User ID</th>
+				<th>Name</th>
+				<th>Username</th>
+				<th>Password</th>
+				<th>Role</th>
+				<th>Email</th>
+				<th>Phone Number</th>
+				<th>Address</th>
+			</tr>
+			<?php foreach ($users as $user): ?>
+			<tr>
+				<td><?= $user['user_id'] ?></td>
+				<td><?= $user['name'] ?></td>
+				<td><?= $user['username'] ?></td>
+				<td><?= $user['password'] ?></td>
+				<td><?= $user['role'] ?></td>
+				<td><?= $user['email'] ?></td>
+				<td><?= $user['phone_number'] ?></td>
+				<td><?= $user['address'] ?></td>
+				<td><button class="delete-btn" data-user-id="<?= $user['user_id'] ?>">Delete</button></td>
+			</tr>
+			<?php endforeach; ?>
+		</table> 
     </div>
+	<script src="../JS/delete_user.js"></script>
 </body>
+<style>
 
+</style>
 </html>
-<<<<<<< HEAD
-//update
-=======
->>>>>>> rakib

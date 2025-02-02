@@ -5,8 +5,7 @@ if (!isset($_COOKIE['username']) || $_COOKIE['role'] != 'admin' ) {
 	exit();
 }
 
-$userinfo = $_SESSION['userinfo'];
-
+$users = $_SESSION['users'];
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +13,11 @@ $userinfo = $_SESSION['userinfo'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../styles/admin_utilites.css">
+    <link rel="stylesheet" href="../styles/admin_utilites.css">
     <title>Admin Dashboard</title>
 </head>
 <body>
+
     <div class="sidebar">
 
         <a href="../controllers/admin_dashboard_controller.php"><h1>Admin Dashboard</h1><a/>
@@ -45,41 +45,35 @@ $userinfo = $_SESSION['userinfo'];
 		<a href="../controllers/view_orders_controller.php"><h2>Orders</h2></a>
 		<a href="../controllers/review_admin_controller.php"><h2>Reviews</h2></a>
 		<a href="../controllers/logout.php"><h2>Logout</h2></a>
-<<<<<<< HEAD
-    </div> 
-          
-=======
     </div>
->>>>>>> rakib
     <div class="container">
-    <h1 id="profile">User Profile</h1>
-    <table>
-        <tr>
-            <th>User ID</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Role</th>
-            <th>Email</th>
-            <th>Name</th>
-            <th>Phone Number</th>
-            <th>Address</th>
-        </tr>
-        <tr>
-			<td><?= $userinfo['user_id'] ?></td>
-            <td><?= $userinfo['username'] ?></td>
-            <td><?= $userinfo['password'] ?></td>
-            <td><?= $userinfo['role'] ?></td>
-            <td><?= $userinfo['email'] ?></td>
-            <td><?= $userinfo['name'] ?></td>
-            <td><?= $userinfo['phone_number'] ?></td>
-            <td><?= $userinfo['address'] ?></td>
-        </tr>
-    </table>
+        <h1 id="heading">Users</h1>
+        <table id="user-table">
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+            <?php foreach ($users as $user): ?>
+                <tr data-user-id="<?= $user['user_id'] ?>">
+                    <td><?= $user['user_id'] ?></td>
+                    <td class="editable" data-field="name"><?= $user['name'] ?></td>
+                    <td class="editable" data-field="username"><?= $user['username'] ?></td>
+                    <td class="editable" data-field="password"><?= $user['password'] ?></td>
+                    <td class="editable" data-field="role"><?= $user['role'] ?></td>
+                    <td class="editable" data-field="email"><?= $user['email'] ?></td>
+                    <td class="editable" data-field="phone_number"><?= $user['phone_number'] ?></td>
+                    <td class="editable" data-field="address"><?= $user['address'] ?></td>
+                    <td><button class="save-btn">Save</button></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
     </div>
+    <script src="../JS/edit_user.js"></script>
 </body>
-
 </html>
-<<<<<<< HEAD
-//update
-=======
->>>>>>> rakib

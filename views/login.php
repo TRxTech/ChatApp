@@ -34,4 +34,8 @@ $errorMessage = isset($_SESSION['error_login']) ? $_SESSION['error_login'] : nul
   </form>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> rakib

@@ -7,13 +7,18 @@ document
 
     let isValid = true;
 
-    const email = document.getElementById("email").value.trim();
+   const email = document.getElementById("email").value.trim();
+    
     if (email === "" || !isValidEmail(email)) {
       isValid = false;
+      
       document.getElementById("email-error").textContent =
+      
         "Valid email is required";
       document.getElementById("email-error").style.color = "red";
+      
     }
+
 
     const name = document.getElementById("name").value.trim();
     if (name === "") {

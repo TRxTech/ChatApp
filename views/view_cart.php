@@ -100,7 +100,7 @@ $products = $_SESSION['products'];
     </main>
 
     <footer>
-        <p>&copy; 2024 Great Buy. All rights reserved.</p>
+        <p>&copy; 2024-25 Sobzi_Lagbe. All rights reserved.</p>
     </footer>
 
 </body>

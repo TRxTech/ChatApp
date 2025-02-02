@@ -21,7 +21,7 @@ $orders = $_SESSION['orders'];
 </head>
 <body>
     <header>
-        <h1>Great Buy</h1>
+        <h1>Sobzi_Lagbe</h1>
         <nav>
             <ul>
                 <li><a href="../controllers/home_page_controller.php">Home</a></li>

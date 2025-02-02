@@ -14,17 +14,17 @@ $products = $_SESSION['products'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/customer_utilities.css">
-    <title>My Ecommerce Store</title>
+    <title>Ecommerce Store</title>
 </head>
 <body>
 
     <header>
-        <h1>Great Buy</h1>
+        <h1>Sobzi_Lagbe</h1>
         <nav>
             <ul>
                 <li><a href="../controllers/home_page_controller.php">Home</a></li>
                 <li><a href="../controllers/update_user.php">Update Profile</a></li>
-                <li><a href="../controller/update_user.php">About</a></li>
+                <!-- <li><a href="../controller/update_user.php">About</a></li> -->
                 <li><a href="../controllers/logout.php">Logout</a></li>
             </ul>
         </nav>
@@ -72,7 +72,7 @@ $products = $_SESSION['products'];
 			<section class="product">
 				<h2><?= $product['name'] ?></h2>
 				<p>Description: <?= $product['description'] ?></p>
-				<p class="price">Price: $<?= $product['price'] ?></p>
+				<p class="price">Price: TK<?= $product['price'] ?></p>
 				<p>Category: <?= $product['category'] ?></p>
 				<p class="stock-quantity">Stock Quantity: <?= $product['stock_quantity'] ?></p>
 
@@ -86,7 +86,7 @@ $products = $_SESSION['products'];
     </main>
 
     <footer>
-        <p>&copy; 2024 Great Buy. All rights reserved.</p>
+        <p>&copy; 2024 Sobzi_Lagbe. All rights reserved.</p>
     </footer>
 
 </body>

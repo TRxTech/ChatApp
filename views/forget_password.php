@@ -3,6 +3,7 @@ session_start();
 
 $errorMessage = isset($_SESSION['error_email']) ? $_SESSION['error_email'] : null;
 
+
 ?>
 <!DOCTYPE html>
 <html>

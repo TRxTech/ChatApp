@@ -45,12 +45,7 @@ $userinfo = $_SESSION['userinfo'];
 		<a href="../controllers/view_orders_controller.php"><h2>Orders</h2></a>
 		<a href="../controllers/review_admin_controller.php"><h2>Reviews</h2></a>
 		<a href="../controllers/logout.php"><h2>Logout</h2></a>
-<<<<<<< HEAD
-    </div> 
-          
-=======
     </div>
->>>>>>> rakib
     <div class="container">
     <h1 id="profile">User Profile</h1>
     <table>
@@ -79,7 +74,3 @@ $userinfo = $_SESSION['userinfo'];
 </body>
 
 </html>
-<<<<<<< HEAD
-//update
-=======
->>>>>>> rakib

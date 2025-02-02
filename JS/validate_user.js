@@ -65,8 +65,11 @@ function clearErrors() {
 }
 
 function isValidEmail(email) {
+  
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
   return emailRegex.test(email);
+  
 }
 
 function isValidPhoneNumber(phone_number) {
